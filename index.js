@@ -21,7 +21,9 @@ mongoose.connection.on("connected", () => {
 app.use("/api/user", userRouter)
 app.use("/api/admin", adminRouter)
 app.use("/api/customer", customerRouter)
-
+app.get("/", (res) => {
+    res.status(200).json("connected")
+})
 
 
 app.listen(port, () => {
